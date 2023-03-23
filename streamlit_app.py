@@ -39,11 +39,11 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_cur.execute("SELECT * from FRUIT_LOAD_LIST")
 my_data_rows = my_cur.fetchall()
-streamlit.text("The fruit load contains:")
-streamlit.text(my_data_rows)
+streamlit.header("The fruit load contains:")
+streamlit.dataframe(my_data_rows)
 
 
 #new section to display fruityvice api response
 
 fruit_choice1 = streamlit.text_input('What fruit would you like to eat?','jackfruit')
-streamlit.write('Thanks for adding ', fruit_choice)
+streamlit.write('Thanks for adding ', fruit_choice1)
